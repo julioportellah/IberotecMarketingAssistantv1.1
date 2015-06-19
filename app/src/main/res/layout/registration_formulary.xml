@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll_body"
+        >
+
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="false"
+            android:id="@+id/main_view"
+            android:paddingBottom="40dp"
+            >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/institucion_procedencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Institución de Procedencia"
+                        android:layout_weight=".9"
+                        android:layout_alignParentLeft="true"/>
+                    <TextView
+                        android:id="@+id/lblDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16/05/2015"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@+id/procedencia" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/distrito_procedencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:hint="Distrito de Institución de Procedencia"/>
+                    <EditText
+                        android:id="@+id/tipo_de_evento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Tipo de Evento"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/apellido_paterno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellido Paterno"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"/>
+                    <EditText
+                        android:id="@+id/apellido_materno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellido Materno"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"/>
+                    <EditText
+                        android:id="@+id/nombres_completos"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombres Completos"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sexo:"/>
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight=".25">
+                        <RadioButton
+                            android:id="@+id/is_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="F"/>
+                        <RadioButton
+                            android:id="@+id/is_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:text="M"/>
+                    </RadioGroup>
+                    <EditText
+                        android:id="@+id/edad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="Edad"
+                        android:layout_weight=".25"/>
+                    <EditText
+                        android:id="@+id/dni"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:inputType="number"
+                        android:hint="DNI"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:ems="10"
+                        android:id="@+id/fecha_nacimiento"
+                        android:hint="Fecha de Nacimiento"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/domicilio"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Domicilio"
+                        android:layout_alignParentLeft="true"/>
+                    <EditText
+                        android:id="@+id/distrito"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Distrito"
+                        android:layout_alignParentLeft="true"/>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <EditText
+                            android:id="@+id/provincia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Provincia"
+                            android:layout_weight=".5"
+                            />
+                        <EditText
+                            android:id="@+id/departamento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Departamento"
+                            android:layout_weight=".5"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/telefono_casa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:layout_weight=".25"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:hint="Telefono Fijo"
+                        />
+                    <EditText
+                        android:id="@+id/celular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:layout_weight=".25"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:hint="Celular"/>
+                    <EditText
+                        android:id="@+id/correo_electronico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:layout_weight=".5"
+                        android:textColorHint="#7ADE46"
+                        android:textStyle="bold"
+                        android:hint="Correo Electrónico,"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/medio_e_mail"
+                        android:text="E-mail"
+                        android:onClick="onStoryCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/medio_web"
+                        android:text="Web"
+                        android:onClick="onStoryCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/medio_referencia"
+                        android:text="Referencias"
+                        android:onClick="onStoryCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/medio_papel"
+                        android:text="Periódicos/Revistas"
+                        android:onClick="onStoryCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/medio_radio"
+                        android:text="Radio"
+                        android:onClick="onStoryCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/medio_tv"
+                        android:text="TV"
+                        android:onClick="onStoryCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/medio_feria"
+                        android:text="Feria"
+                        android:onClick="onStoryCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <EditText
+                        android:id="@+id/medio_otros"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Otros"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Intereses:"/>
+
+                    <CheckBox
+                        android:id="@+id/interes_telematica"
+                        android:text="Telemática"
+                        android:onClick="onInterestCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/interes_telecomunicaciones"
+                        android:text="Sistemas de Telecomunicaciones"
+                        android:onClick="onInterestCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/interes_curso"
+                        android:text="Cursos de Extensión"
+                        android:onClick="onInterestCheckBoxClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:enabled="false"
+                        android:id="@+id/tipo_de_curso"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Especifique el curso"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/footer"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Enviar"
+            android:layout_weight="0.25"
+            android:id="@+id/guardar_datos"
+            android:onClick="saveData"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

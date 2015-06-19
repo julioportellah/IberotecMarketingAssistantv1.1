@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">IberotecMarketingAssistantv1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="m_video_btn_text">Video </string>
+    <string name="m_picture_btn_text">Fotos</string>
+    <string name="btn1_text">Canal 2</string>
+    <string name="btn2_text">Globo</string>
+    <string name="btn3_text">Drone</string>
+    <string name="btn4_text">Superpoder</string>
+    <string name="btn5_text">Telecomunicaciones</string>
+    <string name="btn6_text">Teleamor</string>
+    <string name="btn_register_text">Registrar</string>
+
+
+    <string-array name="picture_titles">
+        <item>Hexacóptero</item>
+        <item>Hexápodo</item>
+        <item>Redes</item>
+        <item>Electrónica</item>
+        <item>Instituto1</item>
+        <item>Interior</item>
+        <item>Telecomunicaciones</item>
+        <item>Física</item>
+        <item>Domotica</item>
+        <item>Globo</item>
+    </string-array>
+
+    <array name="icons">
+        <item>@drawable/hexacoptero_icono</item>
+        <item>@drawable/hexapodo_icono</item>
+        <item>@drawable/redes_icono</item>
+        <item>@drawable/electronica_icono</item>
+        <item>@drawable/instituto_icono</item>
+        <item>@drawable/interior_instituto_icono</item>
+        <item>@drawable/telecomunicaciones_iconos</item>
+        <item>@drawable/fisica_icono</item>
+        <item>@drawable/domotica_icono</item>
+        <item>@drawable/globo_icono</item>
+    </array>
+
+    <string-array name="video_titles">
+        <item>Instituto1</item>
+        <item>Interior</item>
+        <item>Telecomunicaciones</item>
+        <item>Física</item>
+        <item>Domotica</item>
+        <item>Globo</item>
+        <item>Hexacóptero</item>
+        <item>Hexápodo</item>
+        <item>Redes</item>
+        <item>Electrónica</item>
+
+    </string-array>
+
+    <array name="video_icons">
+        <item>@drawable/instituto_icono</item>
+        <item>@drawable/interior_instituto_icono</item>
+        <item>@drawable/telecomunicaciones_iconos</item>
+        <item>@drawable/fisica_icono</item>
+        <item>@drawable/domotica_icono</item>
+        <item>@drawable/globo_icono</item>
+        <item>@drawable/hexacoptero_icono</item>
+        <item>@drawable/hexapodo_icono</item>
+        <item>@drawable/redes_icono</item>
+        <item>@drawable/electronica_icono</item>
+    </array>
+
+
+</resources>

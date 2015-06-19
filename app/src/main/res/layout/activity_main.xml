@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/capaPrincipal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/capaDeFragmento"
+            android:orientation="vertical"
+            android:layout_weight=".25">
+            <fragment
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:name="com.example.juliusdevelopment.iberotecmarketingassistantv11.MyListFragment"
+                android:id="@+id/fragment1">
+                </fragment>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/capaDeVideo"
+            android:orientation="vertical"
+            android:transitionGroup="false"
+            android:layout_weight=".75">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/botonesDeSeleccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_weight=".75"
+                    >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:id="@+id/botonesDeVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/videoMasterButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/m_video_btn_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+
+                        <Button
+                            android:id="@+id/pictureMasterButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/m_picture_btn_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+
+
+                        <Button
+                            android:id="@+id/video_btn_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn1_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+
+                        <Button
+                            android:id="@+id/video_btn_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn2_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+
+                        <Button
+                            android:id="@+id/video_btn_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn3_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+
+                        <Button
+                            android:id="@+id/video_btn_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn4_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+                        <Button
+                            android:id="@+id/video_btn_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn5_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+                        <Button
+                            android:id="@+id/video_btn_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn6_text"
+                            android:rotation="180"
+                            android:layout_weight="1"
+                            />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cara a Cara"
+                    android:id="@+id/mode_btn"
+                    android:rotation="180"
+                    android:background="#164651"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight=".100"/>
+
+                <Button
+                    android:id="@+id/registro_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_register_text"
+                    android:rotation="180"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="#7ADE46"
+                    android:layout_weight=".20"
+                    />
+
+            </LinearLayout>
+
+            <VideoView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/videoView"
+                android:layout_gravity="center_horizontal"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
