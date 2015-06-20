@@ -148,6 +148,24 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             case "Globo":
                 finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_globo;
                 break;
+            case "Drone construido":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_drone_construido;
+                break;
+            case "Frecuencia Latina":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_frecuencia_latina;
+                break;
+            case "Globo video":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_globo;
+                break;
+            case "Superpoderes":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_superpoderes;
+                break;
+            case "Teleamor":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_teleamor;
+                break;
+            case "Mundo Moderno":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_telecomunicaciones;
+                break;
         }
         return finalString;
     }
@@ -367,12 +385,14 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
         if(status.equals("pictures")){
-            Toast.makeText(this, getFileName(message), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getFileName(message), Toast.LENGTH_LONG).show();
             try {
                 showPicture(getFileName(message));
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else if(status.equals("video")){
+            playVideo(getFileName(message));
         }
     }
 }

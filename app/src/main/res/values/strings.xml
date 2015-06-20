@@ -40,12 +40,12 @@
     </array>
 
     <string-array name="video_titles">
-        <item>Drone</item>
+        <item>Drone construido</item>
         <item>Frecuencia Latina</item>
-        <item>Globo</item>
+        <item>Globo video</item>
         <item>Superpoderes</item>
         <item>Teleamor</item>
-        <item>Telecomunicaciones</item>
+        <item>Mundo Moderno</item>
     </string-array>
 
     <array name="video_icons">
