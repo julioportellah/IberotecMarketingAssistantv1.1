@@ -156,6 +156,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     {
         //String uriPath=path;
         Uri uri = Uri.parse(path);
+        videoDeMuestra.setBackground(null);
         videoDeMuestra.setVideoURI(uri);
         videoDeMuestra.requestFocus();
         if(videoDeMuestra.isPlaying())
