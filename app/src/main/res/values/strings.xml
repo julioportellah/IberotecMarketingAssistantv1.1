@@ -40,30 +40,21 @@
     </array>
 
     <string-array name="video_titles">
-        <item>Instituto1</item>
-        <item>Interior</item>
-        <item>Telecomunicaciones</item>
-        <item>Física</item>
-        <item>Domotica</item>
+        <item>Drone</item>
+        <item>Frecuencia Latina</item>
         <item>Globo</item>
-        <item>Hexacóptero</item>
-        <item>Hexápodo</item>
-        <item>Redes</item>
-        <item>Electrónica</item>
-
+        <item>Superpoderes</item>
+        <item>Teleamor</item>
+        <item>Telecomunicaciones</item>
     </string-array>
 
     <array name="video_icons">
-        <item>@drawable/instituto_icono</item>
-        <item>@drawable/interior_instituto_icono</item>
-        <item>@drawable/telecomunicaciones_iconos</item>
-        <item>@drawable/fisica_icono</item>
-        <item>@drawable/domotica_icono</item>
-        <item>@drawable/globo_icono</item>
-        <item>@drawable/hexacoptero_icono</item>
-        <item>@drawable/hexapodo_icono</item>
-        <item>@drawable/redes_icono</item>
-        <item>@drawable/electronica_icono</item>
+        <item>@drawable/video_drone_construido_icono</item>
+        <item>@drawable/video_frecuencia_latina_icono</item>
+        <item>@drawable/video_globo_icono</item>
+        <item>@drawable/video_superpoderes_icono</item>
+        <item>@drawable/video_teleamor_icono</item>
+        <item>@drawable/video_telecomunicaciones_icono</item>
     </array>
 
 
