@@ -29,7 +29,7 @@ import java.io.InputStream;
 public class MainActivity extends Activity implements MyListFragment.onItemSelectedListener{
 
 
-    Button videoButton1, videoButton2, videoButton3,videoButton4,videoButton5,videoButton6;
+    //Button videoButton1, videoButton2, videoButton3,videoButton4,videoButton5,videoButton6;
     Button registrationButton,modeButton;
     Button videoMasterButton,pictureMasterButton;
     //Button registerButton;
@@ -56,24 +56,28 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
 
         videoMasterButton=(Button)findViewById(R.id.videoMasterButton);
         pictureMasterButton=(Button)findViewById(R.id.pictureMasterButton);
+        /*
         videoButton1=(Button)findViewById(R.id.video_btn_1);
         videoButton2=(Button)findViewById(R.id.video_btn_2);
         videoButton3=(Button)findViewById(R.id.video_btn_3);
         videoButton4=(Button)findViewById(R.id.video_btn_4);
         videoButton5=(Button)findViewById(R.id.video_btn_5);
         videoButton6=(Button)findViewById(R.id.video_btn_6);
+        */
         registrationButton=(Button)findViewById(R.id.registro_btn);
         modeButton=(Button)findViewById(R.id.mode_btn);
 
 
         videoMasterButton.setOnClickListener(centralHandler);
         pictureMasterButton.setOnClickListener(centralHandler);
+       /*
         videoButton1.setOnClickListener(centralHandler);
         videoButton2.setOnClickListener(centralHandler);
         videoButton3.setOnClickListener(centralHandler);
         videoButton4.setOnClickListener(centralHandler);
         videoButton5.setOnClickListener(centralHandler);
         videoButton6.setOnClickListener(centralHandler);
+        */
         registrationButton.setOnClickListener(centralHandler);
         modeButton.setOnClickListener(centralHandler);
         //Fin de la definicion de botones
@@ -88,7 +92,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         videoDeMuestra.setMediaController(mdc1);
     }
 
-
+    /*
     private String getFileName(int selector){
         String finalString="";
         switch (selector) {
@@ -113,7 +117,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
 
         }
         return finalString;
-    }
+    }*/
 
     private String getFileName(String selector){
         String finalString="";
@@ -251,7 +255,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
                     Toast.makeText(MainActivity.this, "Fotos !!!", Toast.LENGTH_SHORT).show();
                     callPictureFragment();
                     break;
-                case R.id.video_btn_1:
+            /*    case R.id.video_btn_1:
                     videoString=getFileName(1);
                     playVideo(videoString);
                     break;
@@ -279,7 +283,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
                 case R.id.video_btn_6:
                     videoString=getFileName(6);
                     playVideo(videoString);
-                    break;
+                    break;*/
                 //playVideoTest(3);
                 case R.id.registro_btn:
                     loadRegistrationPage();
@@ -308,12 +312,14 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             registrationButton.setRotation(0);
             videoMasterButton.setRotation(0);
             pictureMasterButton.setRotation(0);
+       /*
             videoButton1.setRotation(0);
             videoButton2.setRotation(0);
             videoButton3.setRotation(0);
             videoButton4.setRotation(0);
             videoButton5.setRotation(0);
             videoButton6.setRotation(0);
+            */
             Toast.makeText(MainActivity.this, "Éxito!!!", Toast.LENGTH_SHORT).show();
         }else{
             modeButton.setText("Cara a Cara");
@@ -330,12 +336,14 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             registrationButton.setRotation(180);
             videoMasterButton.setRotation(180);
             pictureMasterButton.setRotation(180);
+            /*
             videoButton1.setRotation(180);
             videoButton2.setRotation(180);
             videoButton3.setRotation(180);
             videoButton4.setRotation(180);
             videoButton5.setRotation(180);
             videoButton6.setRotation(180);
+            */
             Toast.makeText(MainActivity.this, "Éxito también!!!", Toast.LENGTH_SHORT).show();
         }
     }

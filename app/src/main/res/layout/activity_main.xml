@@ -40,10 +40,10 @@
                 android:layout_height="wrap_content">
 
                 <HorizontalScrollView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/horizontalScrollView"
-                    android:layout_weight=".75"
+
                     >
 
                     <LinearLayout
@@ -66,59 +66,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/m_picture_btn_text"
-                            android:rotation="180"
-                            android:layout_weight="1"
-                            />
-
-
-                        <Button
-                            android:id="@+id/video_btn_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/btn1_text"
-                            android:rotation="180"
-                            android:layout_weight="1"
-                            />
-
-                        <Button
-                            android:id="@+id/video_btn_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/btn2_text"
-                            android:rotation="180"
-                            android:layout_weight="1"
-                            />
-
-                        <Button
-                            android:id="@+id/video_btn_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/btn3_text"
-                            android:rotation="180"
-                            android:layout_weight="1"
-                            />
-
-                        <Button
-                            android:id="@+id/video_btn_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/btn4_text"
-                            android:rotation="180"
-                            android:layout_weight="1"
-                            />
-                        <Button
-                            android:id="@+id/video_btn_5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/btn5_text"
-                            android:rotation="180"
-                            android:layout_weight="1"
-                            />
-                        <Button
-                            android:id="@+id/video_btn_6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/btn6_text"
                             android:rotation="180"
                             android:layout_weight="1"
                             />
