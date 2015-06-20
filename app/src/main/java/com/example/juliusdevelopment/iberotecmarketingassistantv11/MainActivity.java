@@ -3,8 +3,13 @@ package com.example.juliusdevelopment.iberotecmarketingassistantv11;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 //import android.provider.MediaStore;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,6 +21,10 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.VideoView;
 import android.widget.MediaController;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends Activity implements MyListFragment.onItemSelectedListener{
 
@@ -106,6 +115,43 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         return finalString;
     }
 
+    private String getFileName(String selector){
+        String finalString="";
+        switch (selector) {
+            case "Hexacóptero":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_hexacoptero;
+                break;
+            case "Hexápodo":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_hexapodo;
+                break;
+            case "Redes":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_redes;
+                break;
+            case "Electrónica":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_electronica;
+                break;
+            case "Instituto1":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_instituto;
+                break;
+            case "Interior":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_interior_instituto;
+                break;
+            case "Telecomunicaciones":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_telecomunicaciones;
+                break;
+            case "Física":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_fisica;
+                break;
+            case "Domotica":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_domotica;
+                break;
+            case "Globo":
+                finalString = "android.resource://" + getPackageName() + "/" + R.raw.picture_globo;
+                break;
+        }
+        return finalString;
+    }
+
     private void playVideo(String path)
     {
         //String uriPath=path;
@@ -117,6 +163,26 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             videoDeMuestra.stopPlayback();
         }
         videoDeMuestra.start();
+    }
+
+    private void showPicture(String path) throws IOException {
+        //String uriPath=path;
+        Uri uri = Uri.parse(path);
+        //Bitmap bitmap= MediaStore.Images.Media.getBitmap(this.getContentResolver(),uri);
+        /*
+        videoDeMuestra.setVideoURI(uri);
+        videoDeMuestra.requestFocus();*/
+        if(videoDeMuestra.isPlaying())
+        {
+            videoDeMuestra.stopPlayback();
+        }
+        Bitmap bmd= BitmapFactory.decodeResource(getResources(), R.raw.picture_instituto);
+        Drawable d=new BitmapDrawable(getResources(),bmd);
+        videoDeMuestra.setBackground(d);
+        //InputStream stream=getContentResolver().openInputStream(uri);
+        //videoDeMuestra.setBackground(stream);
+        //videoDeMuestra.setBackground(getResources().getDrawable(R.raw.picture_electronica));
+        //videoDeMuestra.start();
     }
 
     public void callVideoFragment(){
@@ -297,5 +363,14 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         ft.commit();
         hid=true;
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+
+        if(status.equals("pictures")){
+            Toast.makeText(this, getFileName(message), Toast.LENGTH_LONG).show();
+            try {
+                showPicture(getFileName(message));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
