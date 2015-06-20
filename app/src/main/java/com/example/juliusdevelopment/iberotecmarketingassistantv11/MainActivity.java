@@ -168,7 +168,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     private void showPicture(String path) throws IOException {
         //String uriPath=path;
         Uri uri = Uri.parse(path);
-        //Bitmap bitmap= MediaStore.Images.Media.getBitmap(this.getContentResolver(),uri);
+        Bitmap bitmap= MediaStore.Images.Media.getBitmap(this.getContentResolver(),uri);
         /*
         videoDeMuestra.setVideoURI(uri);
         videoDeMuestra.requestFocus();*/
@@ -176,8 +176,9 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         {
             videoDeMuestra.stopPlayback();
         }
-        Bitmap bmd= BitmapFactory.decodeResource(getResources(), R.raw.picture_instituto);
-        Drawable d=new BitmapDrawable(getResources(),bmd);
+        //Bitmap bmd= BitmapFactory.decodeResource(getResources(), R.raw.picture_instituto);
+        //Drawable d=new BitmapDrawable(getResources(),bmd);
+        Drawable d=new BitmapDrawable(getResources(),bitmap);
         videoDeMuestra.setBackground(d);
         //InputStream stream=getContentResolver().openInputStream(uri);
         //videoDeMuestra.setBackground(stream);
