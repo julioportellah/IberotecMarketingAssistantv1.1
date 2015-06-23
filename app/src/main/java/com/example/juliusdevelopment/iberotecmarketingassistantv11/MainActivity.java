@@ -28,8 +28,6 @@ import java.io.InputStream;
 
 public class MainActivity extends Activity implements MyListFragment.onItemSelectedListener{
 
-
-    //Button videoButton1, videoButton2, videoButton3,videoButton4,videoButton5,videoButton6;
     Button registrationButton,modeButton;
     Button videoMasterButton,pictureMasterButton;
     //Button registerButton;
@@ -56,28 +54,12 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
 
         videoMasterButton=(Button)findViewById(R.id.videoMasterButton);
         pictureMasterButton=(Button)findViewById(R.id.pictureMasterButton);
-        /*
-        videoButton1=(Button)findViewById(R.id.video_btn_1);
-        videoButton2=(Button)findViewById(R.id.video_btn_2);
-        videoButton3=(Button)findViewById(R.id.video_btn_3);
-        videoButton4=(Button)findViewById(R.id.video_btn_4);
-        videoButton5=(Button)findViewById(R.id.video_btn_5);
-        videoButton6=(Button)findViewById(R.id.video_btn_6);
-        */
         registrationButton=(Button)findViewById(R.id.registro_btn);
         modeButton=(Button)findViewById(R.id.mode_btn);
 
 
         videoMasterButton.setOnClickListener(centralHandler);
         pictureMasterButton.setOnClickListener(centralHandler);
-       /*
-        videoButton1.setOnClickListener(centralHandler);
-        videoButton2.setOnClickListener(centralHandler);
-        videoButton3.setOnClickListener(centralHandler);
-        videoButton4.setOnClickListener(centralHandler);
-        videoButton5.setOnClickListener(centralHandler);
-        videoButton6.setOnClickListener(centralHandler);
-        */
         registrationButton.setOnClickListener(centralHandler);
         modeButton.setOnClickListener(centralHandler);
         //Fin de la definicion de botones
@@ -92,32 +74,6 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         videoDeMuestra.setMediaController(mdc1);
     }
 
-    /*
-    private String getFileName(int selector){
-        String finalString="";
-        switch (selector) {
-            case 1:
-                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_frecuencia_latina;
-                break;
-            case 2:
-                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_globo;
-                break;
-            case 3:
-                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_drone_construido;
-                break;
-            case 4:
-                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_superpoderes;
-                break;
-            case 5:
-                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_telecomunicaciones;
-                break;
-            case 6:
-                finalString = "android.resource://" + getPackageName() + "/" + R.raw.video_teleamor;
-                break;
-
-        }
-        return finalString;
-    }*/
 
     private String getFileName(String selector){
         String finalString="";
@@ -192,9 +148,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         //String uriPath=path;
         Uri uri = Uri.parse(path);
         Bitmap bitmap= MediaStore.Images.Media.getBitmap(this.getContentResolver(),uri);
-        /*
-        videoDeMuestra.setVideoURI(uri);
-        videoDeMuestra.requestFocus();*/
+
         if(videoDeMuestra.isPlaying())
         {
             videoDeMuestra.stopPlayback();
@@ -219,6 +173,9 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         }
         status="video";
         FragmentTransaction ft=getFragmentManager().beginTransaction();
+
+        ft.setCustomAnimations(R.animator.slide_in_left,R.animator.slide_out_left,0,0);
+
         ft.show(getFragmentManager().findFragmentById(R.id.fragment1));
         ft.commit();
         hid=false;
@@ -235,8 +192,12 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         }
 
         FragmentTransaction ft=getFragmentManager().beginTransaction();
+
+        ft.setCustomAnimations(R.animator.slide_in_left,R.animator.slide_out_left,0,0);
+
         ft.show(getFragmentManager().findFragmentById(R.id.fragment1));
         ft.commit();
+
         hid=false;
         status="pictures";
     }
@@ -255,35 +216,6 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
                     Toast.makeText(MainActivity.this, "Fotos !!!", Toast.LENGTH_SHORT).show();
                     callPictureFragment();
                     break;
-            /*    case R.id.video_btn_1:
-                    videoString=getFileName(1);
-                    playVideo(videoString);
-                    break;
-                //playVideoTest(1);
-                case R.id.video_btn_2:
-                    videoString=getFileName(2);
-                    playVideo(videoString);
-                    break;
-                //playVideoTest(2);
-                case R.id.video_btn_3:
-                    videoString=getFileName(3);
-                    playVideo(videoString);
-                    break;
-                //playVideoTest(3);
-                case R.id.video_btn_4:
-                    videoString=getFileName(4);
-                    playVideo(videoString);
-                    break;
-                //playVideoTest(3);
-                case R.id.video_btn_5:
-                    videoString=getFileName(5);
-                    playVideo(videoString);
-                    break;
-                //playVideoTest(3);
-                case R.id.video_btn_6:
-                    videoString=getFileName(6);
-                    playVideo(videoString);
-                    break;*/
                 //playVideoTest(3);
                 case R.id.registro_btn:
                     loadRegistrationPage();
@@ -312,14 +244,6 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             registrationButton.setRotation(0);
             videoMasterButton.setRotation(0);
             pictureMasterButton.setRotation(0);
-       /*
-            videoButton1.setRotation(0);
-            videoButton2.setRotation(0);
-            videoButton3.setRotation(0);
-            videoButton4.setRotation(0);
-            videoButton5.setRotation(0);
-            videoButton6.setRotation(0);
-            */
             Toast.makeText(MainActivity.this, "Éxito!!!", Toast.LENGTH_SHORT).show();
         }else{
             modeButton.setText("Cara a Cara");
@@ -336,14 +260,6 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             registrationButton.setRotation(180);
             videoMasterButton.setRotation(180);
             pictureMasterButton.setRotation(180);
-            /*
-            videoButton1.setRotation(180);
-            videoButton2.setRotation(180);
-            videoButton3.setRotation(180);
-            videoButton4.setRotation(180);
-            videoButton5.setRotation(180);
-            videoButton6.setRotation(180);
-            */
             Toast.makeText(MainActivity.this, "Éxito también!!!", Toast.LENGTH_SHORT).show();
         }
     }
@@ -351,13 +267,6 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     public void loadRegistrationPage(){
         Intent intent=new Intent(this,ClientRegistration.class);
         startActivity(intent);
-        /*
-        *  Intent intent = new Intent(this,  DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-        * */
     }
 
 
@@ -387,6 +296,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     @Override
     public void onItemSelected(String message) {
         FragmentTransaction ft=getFragmentManager().beginTransaction();
+        ft.setCustomAnimations(R.animator.no_slide_in_left,R.animator.slide_out_left,0,0);
         ft.hide(getFragmentManager().findFragmentById(R.id.fragment1));
         ft.commit();
         hid=true;
