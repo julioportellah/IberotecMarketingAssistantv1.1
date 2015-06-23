@@ -47,6 +47,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/m_video_btn_text"
                             android:rotation="180"
+                            android:layout_weight=".25"
                             android:background="#164651"
                             android:textStyle="bold"
                             android:textColor="#FFFFFF"
@@ -58,6 +59,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/m_picture_btn_text"
                             android:rotation="180"
+                            android:layout_weight=".25"
                             android:background="#164651"
                             android:textStyle="bold"
                             android:textColor="#FFFFFF"
@@ -72,7 +74,8 @@
                     android:rotation="180"
                     android:background="#164651"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"/>
+                    android:textColor="#FFFFFF"
+                    android:layout_weight=".25"/>
 
                 <Button
                     android:id="@+id/registro_btn"
@@ -83,6 +86,7 @@
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
                     android:background="#7ADE46"
+                    android:layout_weight=".25"
                     />
 
             </LinearLayout>
