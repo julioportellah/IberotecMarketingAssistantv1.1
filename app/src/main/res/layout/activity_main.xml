@@ -37,20 +37,9 @@
                 android:orientation="horizontal"
                 android:id="@+id/botonesDeSeleccion"
                 android:layout_width="match_parent"
+                android:layout_weight="0.5"
                 android:layout_height="wrap_content">
 
-                <HorizontalScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/horizontalScrollView"
-
-                    >
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:id="@+id/botonesDeVideo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
                         <Button
                             android:id="@+id/videoMasterButton"
@@ -58,7 +47,9 @@
                             android:layout_height="wrap_content"
                             android:text="@string/m_video_btn_text"
                             android:rotation="180"
-                            android:layout_weight="1"
+                            android:background="#164651"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
                             />
 
                         <Button
@@ -67,12 +58,11 @@
                             android:layout_height="wrap_content"
                             android:text="@string/m_picture_btn_text"
                             android:rotation="180"
-                            android:layout_weight="1"
+                            android:background="#164651"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
                             />
 
-                    </LinearLayout>
-
-                </HorizontalScrollView>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -82,8 +72,7 @@
                     android:rotation="180"
                     android:background="#164651"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:layout_weight=".100"/>
+                    android:textColor="#FFFFFF"/>
 
                 <Button
                     android:id="@+id/registro_btn"
@@ -94,7 +83,6 @@
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
                     android:background="#7ADE46"
-                    android:layout_weight=".20"
                     />
 
             </LinearLayout>
