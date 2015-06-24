@@ -10,10 +10,13 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 //import android.provider.MediaStore;
 import android.provider.MediaStore;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -26,8 +29,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainActivity extends Activity implements MyListFragment.onItemSelectedListener{
+public class MainActivity extends Activity implements MyListFragment.onItemSelectedListener,
+        GestureDetector.OnGestureListener,GestureDetector.OnDoubleTapListener{
 
+    //Declaring controllers
     Button registrationButton,modeButton;
     Button videoMasterButton,pictureMasterButton;
     //Button registerButton;
@@ -35,9 +40,9 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     VideoView videoDeMuestra,videoDeMuestra2,videoDeMuestra3;
     String status="pictures";
     boolean hid=true;
+    private GestureDetectorCompat mDetector;
 
-    //ListFragment Controllers
-
+    //Creating and declaring all
     //MediaController mediaController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +77,14 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         videoDeMuestra.setVideoURI(Uri.parse(path1));
         mdc1.setAnchorView(videoDeMuestra);
         videoDeMuestra.setMediaController(mdc1);
+
+        mDetector=new GestureDetectorCompat(this,this);
+
+
     }
 
 
+    //Getting files from listfragment output strings
     private String getFileName(String selector){
         String finalString="";
         switch (selector) {
@@ -130,6 +140,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         return finalString;
     }
 
+    //Void for playing video
     private void playVideo(String path)
     {
         //String uriPath=path;
@@ -143,7 +154,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         }
         videoDeMuestra.start();
     }
-
+    //Void for showing pics
     private void showPicture(String path) throws IOException {
         //String uriPath=path;
         Uri uri = Uri.parse(path);
@@ -163,6 +174,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         //videoDeMuestra.start();
     }
 
+    //Transforming common fragment into videoFragment
     public void callVideoFragment(){
         MyListFragment leListFragment= (MyListFragment) getFragmentManager().findFragmentById(R.id.fragment1);
         //leListFragment.testingMessage();
@@ -180,7 +192,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         ft.commit();
         hid=false;
     }
-
+    //Getting picture fragment
     public void callPictureFragment(){
         MyListFragment leListFragment= (MyListFragment) getFragmentManager().findFragmentById(R.id.fragment1);
         //leListFragment.testingMessage();
@@ -202,6 +214,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         status="pictures";
     }
 
+    //Main Handler
     View.OnClickListener centralHandler=new View.OnClickListener(){
         @Override
         public void onClick(View v) {
@@ -226,7 +239,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             }
         }
     };
-
+    //Changing to face to face mode to together mode
     public void changeMode(){
         if(modeButton.getText().toString().equals("Cara a Cara")){
             modeButton.setText("Unipersonal");
@@ -263,12 +276,11 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             //Toast.makeText(MainActivity.this, "Éxito también!!!", Toast.LENGTH_SHORT).show();
         }
     }
-
+    //Void for registrating pages
     public void loadRegistrationPage(){
         Intent intent=new Intent(this,ClientRegistration.class);
         startActivity(intent);
     }
-
 
 
     @Override
@@ -292,7 +304,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
 
         return super.onOptionsItemSelected(item);
     }
-
+    //Getting data from the list fragment
     @Override
     public void onItemSelected(String message) {
         FragmentTransaction ft=getFragmentManager().beginTransaction();
@@ -312,5 +324,80 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         }else if(status.equals("video")){
             playVideo(getFileName(message));
         }
+    }
+    //Gestures Commands
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.mDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+        /*
+        int x=(int)event.getX();
+        int y=(int)event.getY();
+        //Toast.makeText(this, String.valueOf(x), Toast.LENGTH_SHORT).show();
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+            case MotionEvent.ACTION_UP:
+        }
+        return super.onTouchEvent(event);*/
+    }
+
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTap(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDown(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        //Toast.makeText(this, "Lol!", Toast.LENGTH_SHORT).show();
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        float sensitivity=50;
+        if((e1.getX()-e2.getX())>sensitivity && hid==false){
+            //Toast.makeText(this, "Trolol!", Toast.LENGTH_SHORT).show();
+            FragmentTransaction ft=getFragmentManager().beginTransaction();
+            ft.setCustomAnimations(R.animator.no_slide_in_left,R.animator.slide_out_left,0,0);
+            ft.hide(getFragmentManager().findFragmentById(R.id.fragment1));
+            ft.commit();
+            hid=true;
+        }
+        //int x=(int)event.getX();
+        //int y=(int)event.getY();
+        //Toast.makeText(this, "Trolol!", Toast.LENGTH_SHORT).show();
+        //return super.onFling;
+        return true;
     }
 }
