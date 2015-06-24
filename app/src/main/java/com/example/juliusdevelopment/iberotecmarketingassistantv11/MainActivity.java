@@ -165,7 +165,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
 
     public void callVideoFragment(){
         MyListFragment leListFragment= (MyListFragment) getFragmentManager().findFragmentById(R.id.fragment1);
-        leListFragment.testingMessage();
+        //leListFragment.testingMessage();
         if(modeButton.getText().toString().equals("Cara a Cara")){
             leListFragment.setVideoAdapter(true);
         }else{
@@ -183,7 +183,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
 
     public void callPictureFragment(){
         MyListFragment leListFragment= (MyListFragment) getFragmentManager().findFragmentById(R.id.fragment1);
-        leListFragment.testingMessage();
+        //leListFragment.testingMessage();
 
         if(modeButton.getText().toString().equals("Cara a Cara")){
             leListFragment.setPictureAdapter(true);
@@ -209,11 +209,11 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             switch (v.getId()){
                 //Button videoMasterButton,pictureMasterButton;
                 case R.id.videoMasterButton:
-                    Toast.makeText(MainActivity.this, "Video !!!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Video !!!", Toast.LENGTH_SHORT).show();
                     callVideoFragment();
                     break;
                 case R.id.pictureMasterButton:
-                    Toast.makeText(MainActivity.this, "Fotos !!!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Fotos !!!", Toast.LENGTH_SHORT).show();
                     callPictureFragment();
                     break;
                 //playVideoTest(3);
@@ -232,7 +232,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             modeButton.setText("Unipersonal");
             //Rotando el ListFragment
             MyListFragment leListFragment= (MyListFragment) getFragmentManager().findFragmentById(R.id.fragment1);
-            leListFragment.testingMessage();
+            //leListFragment.testingMessage();
             if(status.equals("video")){
                 leListFragment.setVideoAdapter();
             }else if(status.equals("pictures")){
@@ -244,12 +244,12 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             registrationButton.setRotation(0);
             videoMasterButton.setRotation(0);
             pictureMasterButton.setRotation(0);
-            Toast.makeText(MainActivity.this, "Éxito!!!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, "Éxito!!!", Toast.LENGTH_SHORT).show();
         }else{
             modeButton.setText("Cara a Cara");
             //Rotando el ListFragment
             MyListFragment leListFragment= (MyListFragment) getFragmentManager().findFragmentById(R.id.fragment1);
-            leListFragment.testingMessage();
+            //leListFragment.testingMessage();
             if(status.equals("video")){
                 leListFragment.setVideoAdapter(true);
             }else if(status.equals("pictures")){
@@ -260,7 +260,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
             registrationButton.setRotation(180);
             videoMasterButton.setRotation(180);
             pictureMasterButton.setRotation(180);
-            Toast.makeText(MainActivity.this, "Éxito también!!!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, "Éxito también!!!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -300,7 +300,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         ft.hide(getFragmentManager().findFragmentById(R.id.fragment1));
         ft.commit();
         hid=true;
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
         if(status.equals("pictures")){
             //Toast.makeText(this, getFileName(message), Toast.LENGTH_LONG).show();
