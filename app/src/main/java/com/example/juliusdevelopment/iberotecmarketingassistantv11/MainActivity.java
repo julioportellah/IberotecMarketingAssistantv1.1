@@ -77,7 +77,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         videoDeMuestra.setVideoURI(Uri.parse(path1));
         mdc1.setAnchorView(videoDeMuestra);
         videoDeMuestra.setMediaController(mdc1);
-
+        //videoDeMuestra.setMediaController(null);
         mDetector=new GestureDetectorCompat(this,this);
 
 
@@ -143,6 +143,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     //Void for playing video
     private void playVideo(String path)
     {
+        videoDeMuestra.setMediaController(mdc1);
         //String uriPath=path;
         Uri uri = Uri.parse(path);
         videoDeMuestra.setBackground(null);
@@ -156,6 +157,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     }
     //Void for showing pics
     private void showPicture(String path) throws IOException {
+        videoDeMuestra.setMediaController(null);
         //String uriPath=path;
         Uri uri = Uri.parse(path);
         Bitmap bitmap= MediaStore.Images.Media.getBitmap(this.getContentResolver(),uri);
