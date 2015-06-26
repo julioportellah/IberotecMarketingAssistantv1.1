@@ -39,6 +39,19 @@
         <item>@drawable/globo_icono</item>
     </array>
 
+    <array name="picture_id">
+        <item>@raw/picture_hexacoptero</item>
+        <item>@raw/picture_hexapodo</item>
+        <item>@raw/picture_redes</item>
+        <item>@raw/picture_electronica</item>
+        <item>@raw/picture_instituto</item>
+        <item>@raw/picture_interior_instituto</item>
+        <item>@raw/picture_telecomunicaciones</item>
+        <item>@raw/picture_fisica</item>
+        <item>@raw/picture_domotica</item>
+        <item>@raw/picture_globo</item>
+    </array>
+
     <string-array name="video_titles">
         <item>Drone construido</item>
         <item>Frecuencia Latina</item>
@@ -57,5 +70,13 @@
         <item>@drawable/video_telecomunicaciones_icono</item>
     </array>
 
+    <integer-array name="video_id">
+        <item>@raw/video_drone_construido</item>
+        <item>@raw/video_frecuencia_latina</item>
+        <item>@raw/video_globo</item>
+        <item>@raw/video_superpoderes</item>
+        <item>@raw/video_teleamor</item>
+        <item>@raw/video_telecomunicaciones</item>
+    </integer-array>
 
 </resources>

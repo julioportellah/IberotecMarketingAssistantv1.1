@@ -3,6 +3,7 @@ package com.example.juliusdevelopment.iberotecmarketingassistantv11;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -79,12 +80,16 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
         videoDeMuestra.setMediaController(mdc1);
         //videoDeMuestra.setMediaController(null);
         mDetector=new GestureDetectorCompat(this,this);
-
-
+    }
+    //New component hardcoded free
+    private String getFileName(int index,TypedArray content){
+        String finalString="";
+        finalString = "android.resource://" + getPackageName() + "/" + content.getResourceId(index,-1);
+        return finalString;
     }
 
-
     //Getting files from listfragment output strings
+    //Defecto, está en código duro, task unhard it
     private String getFileName(String selector){
         String finalString="";
         switch (selector) {
@@ -308,23 +313,39 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     }
     //Getting data from the list fragment
     @Override
-    public void onItemSelected(String message) {
+    public void onItemSelected(int message) {
+        String[] pictureTitles,videoTitles;
+        TypedArray pictureId,videoId;
+        pictureTitles=getResources().getStringArray(R.array.picture_titles);
+        videoTitles=getResources().getStringArray(R.array.video_titles);
+        pictureId=getResources().obtainTypedArray(R.array.picture_id);
+        videoId=getResources().obtainTypedArray(R.array.video_id);
+        //Hiding fragment
         FragmentTransaction ft=getFragmentManager().beginTransaction();
         ft.setCustomAnimations(R.animator.no_slide_in_left,R.animator.slide_out_left,0,0);
         ft.hide(getFragmentManager().findFragmentById(R.id.fragment1));
         ft.commit();
         hid=true;
         //Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        //Declaring arrays
+
 
         if(status.equals("pictures")){
             //Toast.makeText(this, getFileName(message), Toast.LENGTH_LONG).show();
             try {
-                showPicture(getFileName(message));
+                //Toast.makeText(this, getFileName(0,pictureId), Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, getFileName(message), Toast.LENGTH_LONG).show();
+                showPicture(getFileName(message,pictureId));
+                //showPicture(getFileName(message));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }else if(status.equals("video")){
-            playVideo(getFileName(message));
+            //getFileName(message,videoId);
+            //Toast.makeText(this, getFileName(0,videoId), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getFileName(message), Toast.LENGTH_LONG).show();
+            playVideo(getFileName(message,videoId));
+            //playVideo(getFileName(message));
         }
     }
     //Gestures Commands
@@ -332,16 +353,6 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     public boolean onTouchEvent(MotionEvent event) {
         this.mDetector.onTouchEvent(event);
         return super.onTouchEvent(event);
-        /*
-        int x=(int)event.getX();
-        int y=(int)event.getY();
-        //Toast.makeText(this, String.valueOf(x), Toast.LENGTH_SHORT).show();
-        switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-            case MotionEvent.ACTION_MOVE:
-            case MotionEvent.ACTION_UP:
-        }
-        return super.onTouchEvent(event);*/
     }
 
     @Override
@@ -388,6 +399,8 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         float sensitivity=50;
+        //String[] menuTitles;
+        //menuTitles=getResources().getStringArray(R.array.video_titles);
         if((e1.getX()-e2.getX())>sensitivity && hid==false){
             //Toast.makeText(this, "Trolol!", Toast.LENGTH_SHORT).show();
             FragmentTransaction ft=getFragmentManager().beginTransaction();

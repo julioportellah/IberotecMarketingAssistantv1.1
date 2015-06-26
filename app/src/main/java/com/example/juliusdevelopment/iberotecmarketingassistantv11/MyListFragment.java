@@ -28,7 +28,8 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
     //AQUI VAN LAS INTERFACES
     onItemSelectedListener mCallback;
     public interface onItemSelectedListener{
-        public void onItemSelected(String message);
+        //public void onItemSelected(String message);
+        public void onItemSelected(int message);
     }
 
     @Override
@@ -65,7 +66,8 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Toast.makeText(getActivity(),menuTitles[position],Toast.LENGTH_LONG).show();
-        mCallback.onItemSelected(menuTitles[position]);
+        //mCallback.onItemSelected(menuTitles[position]);
+        mCallback.onItemSelected(position);
     }
 
     public void testingMessage(){
