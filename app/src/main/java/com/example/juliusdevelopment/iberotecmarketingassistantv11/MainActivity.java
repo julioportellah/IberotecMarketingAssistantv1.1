@@ -90,6 +90,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
 
     //Getting files from listfragment output strings
     //Defecto, está en código duro, task unhard it
+    /*
     private String getFileName(String selector){
         String finalString="";
         switch (selector) {
@@ -143,7 +144,7 @@ public class MainActivity extends Activity implements MyListFragment.onItemSelec
                 break;
         }
         return finalString;
-    }
+    }*/
 
     //Void for playing video
     private void playVideo(String path)
